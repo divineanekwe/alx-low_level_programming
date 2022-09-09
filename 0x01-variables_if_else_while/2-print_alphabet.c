@@ -6,7 +6,7 @@
  * char type, to standard output
  *
  * Description - Print the alphabet in lowercase,
- * followed by a new line. You can only use the 
+ * followed by a new line. You can only use the
  * putchar function
  *
  * Return: Always return 0 (success)
@@ -14,10 +14,11 @@
 int main(void)
 {
 	char c;
-	for(c = 'a'; c <= 'z'; c++)
+
+	for (c = 'a'; c <= 'z'; c++)
 	{
 		putchar(c);
-		putchar('\n');
 	}
+	putchar('\n');
 	return (0);
 }
