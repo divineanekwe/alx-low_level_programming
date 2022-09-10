@@ -16,9 +16,9 @@
  */
 int main(void)
 {
-	char c;
+	int n;
 
-	for (c = 48; c < 58; c++)
+	for (n = 48; n < 58; n++)
 		putchar(c);
 	putchar('\n');
 	return (0);
