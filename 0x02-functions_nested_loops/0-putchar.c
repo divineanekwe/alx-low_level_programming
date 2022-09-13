@@ -2,7 +2,7 @@
 /**
   * main - Program starts with entry point
   *
-  * printf - Display result to standard output
+  * _putchar - Write a character to standard output
   *
   * Description - Print _putchar followed by new line
   * The program should should return 0
