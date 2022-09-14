@@ -31,3 +31,6 @@ _putchar.c -> Contains allowed function _putchar(), standard library is not allo
 
 9-main.c -> Contains source file for 9-times_table.c; follow the code below to compile:
 	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 9-main.c 9-times_table.c -o 9-times_table
+
+10-main.c -> Contains source file for 10-add.c; follow the code below to compile:
+	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 10-main.c 10-add.c -o 10-add
