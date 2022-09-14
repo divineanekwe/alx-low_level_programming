@@ -22,3 +22,6 @@ _putchar.c -> Contains allowed function _putchar(), standard library is not allo
 
 6-main.c -> Contains source file for 6-abs.c; follow the code below to compile:
 	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 6-main.c 6-abs.c -o 6-abs
+
+7-main.c -> Contains source file for 7-print_last_digit.c; follow the code below to compile:
+	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 7-main.c 7-print_last_digit.c -o 7-last_digit
