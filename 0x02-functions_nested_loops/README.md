@@ -25,3 +25,6 @@ _putchar.c -> Contains allowed function _putchar(), standard library is not allo
 
 7-main.c -> Contains source file for 7-print_last_digit.c; follow the code below to compile:
 	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 7-main.c 7-print_last_digit.c -o 7-last_digit
+
+8-main.c -> Contains source file for 8-24_hours.c; follow the code below to compile:
+	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 8-main.c 8-24_hours.c -o 8-24
