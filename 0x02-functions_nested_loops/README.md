@@ -10,3 +10,6 @@ _putchar.c -> Contains allowed function _putchar(), standard library is not allo
 
 2-main.c -> Contains source file for 2-print_alphabet_x10.c; follow the code below to compile:
 	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 2-main.c 2-print_alphabet_x10.c -o 2-alphabet_x10
+
+3-main.c -> Contains source file for 3-islower.c; follow the code below to compile:
+	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 3-main.c 3-islower.c -o 3-islower
