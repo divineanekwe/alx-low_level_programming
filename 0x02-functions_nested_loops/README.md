@@ -28,3 +28,6 @@ _putchar.c -> Contains allowed function _putchar(), standard library is not allo
 
 8-main.c -> Contains source file for 8-24_hours.c; follow the code below to compile:
 	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 8-main.c 8-24_hours.c -o 8-24
+
+9-main.c -> Contains source file for 9-times_table.c; follow the code below to compile:
+	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 9-main.c 9-times_table.c -o 9-times_table
