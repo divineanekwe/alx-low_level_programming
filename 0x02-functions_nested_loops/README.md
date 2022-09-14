@@ -19,3 +19,6 @@ _putchar.c -> Contains allowed function _putchar(), standard library is not allo
 
 5-main.c -> Contains source file for 5-sign.c; follow the code below to compile:
 	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 5-main.c 5-sign.c -o 5-sign
+
+6-main.c -> Contains source file for 6-abs.c; follow the code below to compile:
+	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 _putchar.c 6-main.c 6-abs.c -o 6-abs
