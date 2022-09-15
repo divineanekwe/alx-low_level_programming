@@ -4,6 +4,7 @@
 /**
   * main - find and print the largest prime
   * factor of the number 612852475143
+  * lpf: largest prime factor
   *
   * Return: Always 0
   */
@@ -18,7 +19,6 @@ int main(void)
 		n /= 2;
 		lpf = 2;
 	}
-
 	for (i = 3; i <= sqrt(n); i += 2)
 	{
 		while (n % i == 0)
@@ -27,10 +27,10 @@ int main(void)
 			lpf = i;
 		}
 	}
-
-	lpf = n;
-
+	if (n > 2)
+	{
+		lpf = n;
+	}
 	printf("%ld\n", lpf);
-
 	return (0);
 }
