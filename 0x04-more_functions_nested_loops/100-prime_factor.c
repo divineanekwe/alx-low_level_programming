@@ -28,6 +28,7 @@ int main(void)
 		}
 	}
 
+	lpf = n;
 
 	printf("%ld\n", lpf);
 
