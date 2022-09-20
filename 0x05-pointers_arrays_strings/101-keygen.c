@@ -15,11 +15,11 @@ int main(void)
 	int random = 0;
 
 	srand(time(0));
-	char numbers[] = "0123456789";
-	char lAlphabets[] = "abcdefghijklmnopqrstuvwxyz";
-	char uAlphabets[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	char symbols[] = "!@#$^&*?";
-	char password[n];
+	char numbers[10] = "0123456789";
+	char lAlphabets[26] = "abcdefghijklmnopqrstuvwxyz";
+	char uAlphabets[26] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	char symbols[8] = "!@#$^&*?";
+	char password[20];
 
 	random = rand() % 4;
 
@@ -42,7 +42,7 @@ int main(void)
 			printf("%c", password[i]);
 		} else
 		{
-			password[i] = lAphabets[rand() % 26];
+			password[i] = lAlphabets[rand() % 26];
 			random = rand() % 4;
 			printf("%c", password[i]);
 		}
