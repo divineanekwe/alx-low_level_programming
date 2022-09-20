@@ -10,43 +10,34 @@
   */
 int main(void)
 {
-	int n = 20;
-	int i = 0;
-	int random = 0;
+	int i, n;
+	int max, upper, lower;
+	char c;
 
-	srand(time(0));
-	char numbers[10] = "0123456789";
-	char lAlphabets[26] = "abcdefghijklmnopqrstuvwxyz";
-	char uAlphabets[26] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	char symbols[8] = "!@#$^&*?";
-	char password[20];
-
-	random = rand() % 4;
-
-	for (i = 0; i < n; i++)
+	i = 0;
+	max = 2772;
+	lower = 32;
+	upper = 126;
+	while ((max - i) > 0)
 	{
-		if (random == 1)
+		srand(time(0) + i);
+		n = (rand() % (upper - lower + 1)) + lower;
+		if ((i + n) <= max)
 		{
-			password[i] = numbers[rand() % 10];
-			random = rand() % 4;
-			printf("%c", password[i]);
-		} else if (random == 2)
+			c = n;
+			printf("%c", c);
+			i += n;
+		}
+		else
 		{
-			password[i] = symbols[rand() % 8];
-			random = rand() % 4;
-			printf("%c", password[i]);
-		} else if (random == 3)
-		{
-			password[i] = uAlphabets[rand() % 26];
-			random = rand() % 4;
-			printf("%c", password[i]);
-		} else
-		{
-			password[i] = lAlphabets[rand() % 26];
-			random = rand() % 4;
-			printf("%c", password[i]);
+			break;
 		}
 	}
-
+	if ((max - i) > 0)
+	{
+		n = max - i;
+		c = n;
+		printf("%c", c);
+	}
 	return (0);
 }
