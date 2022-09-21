@@ -2,7 +2,6 @@
 
 /**
   * _strcat - appends the @src string to the
-  * @dest string
   * @src: Source string for use to append
   * @dest: Destination for resulting string
   *
