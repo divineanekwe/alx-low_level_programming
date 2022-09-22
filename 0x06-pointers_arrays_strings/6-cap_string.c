@@ -15,6 +15,10 @@ char *cap_string(char *s)
 	int i = 0;
 	char c;
 
+	if (*(s + i) >= 'a' && *(s + i) <= 'z')
+	{
+		*(s + i) -= 32;
+	}
 	while (*(s + i) != '\0')
 	{
 		c = *(s + i);
