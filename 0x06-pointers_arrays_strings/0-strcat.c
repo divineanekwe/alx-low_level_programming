@@ -13,38 +13,20 @@
   */
 char *_strcat(char *dest, char *src)
 {
-	int dlen = 0;
-	int slen = 0;
-	int len = 0;
-	char *dadd = dest;
-	char *sadd = src;
-	int i;
+	int i = 0;
+	int j = 0;
 
-	while (*dest != '\0')
+	while (*(dest + i) != '\0')
 	{
-		dest++;
-		dlen++;
+		i++;
 	}
-	dest = dadd;
-	while (*src != '\0')
+	while (*(src + j) != '\0')
 	{
-		src++;
-		slen++;
+		*(dest + i) = *(src + j);
+		i++;
+		j++;
 	}
-	src = sadd;
-	len = dlen + slen;
-
-	for (i = dlen; i <= (len + 1); i++)
-	{
-		if (i == (len + 1))
-		{
-			*(dadd + i) = '\0';
-		} else
-		{
-			*(dadd + i) = *(sadd);
-			sadd++;
-		}
-	}
+	*(dest + i) = '\0';
 
 	return (dest);
 }
