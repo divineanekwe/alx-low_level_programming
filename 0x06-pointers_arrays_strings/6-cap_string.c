@@ -21,7 +21,7 @@ char *cap_string(char *s)
 		/* 9 is horinzontal tab (TAB) and 11 is vertical tab (VT) */
 		if (c == ',' || c == ';' || c == '.' || c == '!' || c == '?' ||
 			c == '"' || c == '(' || c == ')' || c == '{' ||
-			c == '}' || c == '\n' || c == ' ' || c == 9 || c == 11)
+			c == '}' || c == 10 || c == ' ' || c == 9)
 		{
 			if (*(s + i + 1) >= 'a' && *(s + i + 1) <= 'z')
 			{
