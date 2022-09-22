@@ -11,14 +11,12 @@
 void reverse_array(int *a, int n)
 {
 	int i, tmp;
-	int j = 0;
 	int *rev = a;
 	
-	for (i = (n - 1); i > (n / 2); i--)
+	for (i = 0; i < (n / 2); i++)
 	{
-		tmp = *(rev + j);
-		*(rev + j) = *(a + i);
-		*(a + i) = tmp;
-		j++;
+		tmp = *(rev + i);
+		*(rev + i) = *(a + (n - i - 1));
+		*(a + (n - i - 1)) = tmp;
 	}
 }
