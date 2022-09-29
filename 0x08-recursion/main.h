@@ -16,5 +16,6 @@ int _strlen(char *s);
 int palindrome(char *s, int i, int slen);
 int wildcmp(char *s1, char *s2);
 int equalchar(char *s1, char *s2);
+char *rm_consec_wild(char *s2);
 
 #endif /* MAIN_H */
