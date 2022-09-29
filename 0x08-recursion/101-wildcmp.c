@@ -1,102 +1,95 @@
-#include "main.h"
+#include "holberton.h"
+
+int strlen_no_wilds(char *str);
+void iterate_wild(char **wildstr);
+char *postfix_match(char *str, char *postfix);
+int wildcmp(char *s1, char *s2);
 
 /**
- * wildcmp - compares two strings
- * @s1: First string to compare
- * @s2: Second string to compare
+ * strlen_no_wilds - Returns the length of a string,
+ *                   ignoring wildcard characters.
+ * @str: The string to be measured.
  *
- * Description: @s2 can contain '*',
- * '*' can replace any string
- * (including an empty string)
+ * Return: The length.
+ */
+int strlen_no_wilds(char *str)
+{
+	int len = 0, index = 0;
+
+	if (*(str + index))
+	{
+		if (*str != '*')
+			len++;
+
+		index++;
+		len += strlen_no_wilds(str + index);
+	}
+
+	return (len);
+}
+
+/**
+ * iterate_wild - Iterates through a string located at a wildcard
+ *                until it points to a non-wildcard character.
+ * @wildstr: The string to be iterated through.
+ */
+void iterate_wild(char **wildstr)
+{
+	if (**wildstr == '*')
+	{
+		(*wildstr)++;
+		iterate_wild(wildstr);
+	}
+}
+
+/**
+ * postfix_match - Checks if a string str matches the postfix of
+ *                 another string potentially containing wildcards.
+ * @str: The string to be matched.
+ * @postfix: The postfix.
  *
- * Return: 1 if @s1 and @s2 are identical,
- * otherwise return 0
+ * Return: If str and postfix are identical - a pointer to the null byte
+ *                                            located at the end of postfix.
+ *         Otherwise - a pointer to the first unmatched character in postfix.
+ */
+char *postfix_match(char *str, char *postfix)
+{
+	int str_len = strlen_no_wilds(str) - 1;
+	int postfix_len = strlen_no_wilds(postfix) - 1;
+
+	if (*postfix == '*')
+		iterate_wild(&postfix);
+
+	if (*(str + str_len - postfix_len) == *postfix && *postfix != '\0')
+	{
+		postfix++;
+		return (postfix_match(str, postfix));
+	}
+
+	return (postfix);
+}
+
+/**
+ * wildcmp - Compares two strings, considering wildcard characters.
+ * @s1: The first string to be compared.
+ * @s2: The second string to be compared - may contain wildcards.
+ *
+ * Return: If the strings can be considered identical - 1.
+ *         Otherwise - 0.
  */
 int wildcmp(char *s1, char *s2)
 {
-	/**
-	 * Sum of return values
-	 */
-	int sum = 0;
+	if (*s2 == '*')
+	{
+		iterate_wild(&s2);
+		s2 = postfix_match(s1, s2);
+	}
 
-	/**
-	 * Return 1 if we reach end of @s1 and the character
-	 * or consecutive characters in @s2 is/are '*'
-	 */
-	if ((*s1 == '\0') && (*s2 == '*') && !(*rm_consec_wild(s2)))
+	if (*s2 == '\0')
 		return (1);
 
-	/**
-	 * Return 1 if characters in @s1 and @s2 are equal
-	 * and we reach end of @s1
-	 * Otherwise increment address of @s1 and @s2
-	 */
-	if (*s1 == *s2)
-	{
-		if (*s1 == '\0')
-			return (1);
-		return (wildcmp(s1 + 1, s2 + 1));
-	}
-	/**
-	 * Return 0 if we reach end of @s1 or @s2
-	 */
-	if ((*s1 == '\0') || (*s2 == '\0'))
+	if (*s1 != *s2)
 		return (0);
 
-	/**
-	 * If character in @s2 is '*', get the address
-	 * after '*' or after consecutive '*'s
-	 * Return 1 if we reach end of @s2
-	 * Return value of wildcmp to sum if character
-	 * in @s1 and @s2 are equal
-	 * Increment sum with the return value of *rm_consec_wild
-	 * Return sum, convert non-zero to 1, and keep 0 at 0
-	 */
-	if (*s2 == '*')
-	{
-		s2 = rm_consec_wild(s2);
-		if (*s2 == '\0')
-			return (1);
-		if (*s1 == *s2)
-			sum += wildcmp(s1 + 1, s2 + 1);
-		sum += equalchar(s1 + 1, s2);
-		return (!!sum);
-	}
-	return (0);
-}
-
-/**
- * equalchar - checks for equal characters in two strings
- * @s1: First string to check
- * @s2: Second string to check
- *
- * Return: Recursion or wildcmp
- */
-int equalchar(char *s1, char *s2)
-{
-	/**
-	 * if we reached the end of s1, return 0
-	 * if chars are equal, return the return value of wildcmp()
-	 * increment s1 by 1, not s2
-	 */
-	if (*s1 == '\0')
-		return (0);
-	if (*s1 == *s2)
-		return (wildcmp(s1, s2));
-	return (equalchar(s1 + 1, s2));
-}
-
-/**
- * rm_consec_wild - returns address of character in string,
- * after skipping consecutive '*' wild character(s)
- * @s2: String to check
- *
- * Return: A pointer to @s
- */
-char *rm_consec_wild(char *s2)
-{
-	if (*s2 == '*')
-		return (rm_consec_wild(s2 + 1));
-	else
-		return (s2);
+	return (wildcmp(++s1, ++s2));
 }
