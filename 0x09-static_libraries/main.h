@@ -10,5 +10,6 @@ int _isdigit(int c);
 int _strlen(char *s);
 void _puts(char *s);
 int _atoi(char *s);
+char *_strcat(char *dest, char *src);
 
 #endif /* MAIN_H */
