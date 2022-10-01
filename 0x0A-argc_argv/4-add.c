@@ -6,10 +6,12 @@
   * @argv: Argument vector
   *
   * Description - if no number is passed
-  * to the program, print 0
+  * to the program, print 0.
+  * If number contains symbols that are
+  * not digits, print Error
   *
   * Return: 0 on success.
-  * Otherwise, return 1, and print Error
+  * Otherwise, return 1
   */
 int main(int argc, char **argv)
 {
@@ -18,7 +20,7 @@ int main(int argc, char **argv)
 
 	for (i = 1; i < argc; i++)
 	{
-		if (atoi(argv[i]))
+		if (*(*(argv + i) + 0) > 48 && *(*(argv + i) + 0) < 58)
 		{
 			sum += atoi(argv[i]);
 		} else
