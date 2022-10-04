@@ -20,16 +20,20 @@ char *str_concat(char *s1, char *s2)
 
 	while (s1 != 0x00 && *s1 != '\0' && s1[i] != '\0')
 	{
-			i++;
+		i++;
 	}
 	while (s2 != 0x00 && *s2 != '\0' && s2[j] != '\0')
 	{
-			j++;
+		j++;
 	}
 	s = (char *)malloc(i + j + 1);
+	if (s == NULL)
+	{
+		return ('\0');
+	}
 	for (a = 0; i != 0 && a < i; a++)
 	{
-			s[a] = s1[a];
+		s[a] = s1[a];
 	}
 	for (a = 0; j != 0 && a < j; a++)
 	{
