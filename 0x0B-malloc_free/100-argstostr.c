@@ -33,7 +33,7 @@ char *argstostr(int ac, char **av)
 		}
 		slen++;
 	}
-	s = (char *)malloc(slen + 1);
+	s = (char *)malloc((slen + 1) * sizeof(char));
 	sadd = s;
 	if (s == NULL)
 	{
