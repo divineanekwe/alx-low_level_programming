@@ -26,6 +26,7 @@ int **alloc_grid(int width, int height)
 	grid = (int **)malloc(height * 8);
 	if (grid == NULL)
 	{
+		free(grid);
 		return ('\0');
 	}
 	for (i = 0; i < height; i++)
@@ -33,6 +34,7 @@ int **alloc_grid(int width, int height)
 		grid[i] = (int *)malloc(width * 4);
 		if (grid[i] == NULL)
 		{
+			free(grid);
 			return ('\0');
 		}
 		for (j = 0; j < width; j++)
@@ -41,5 +43,4 @@ int **alloc_grid(int width, int height)
 		}
 	}
 	return (grid);
-	free(grid);
 }
