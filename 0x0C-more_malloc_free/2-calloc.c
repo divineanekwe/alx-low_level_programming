@@ -14,9 +14,12 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
-	char *m = malloc(nmemb * size);
+	char *m;
 
-	if (!m || nmemb == 0 || size == 0)
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+	m = malloc(size * nmemb);
+	if (m == NULL)
 		return (NULL);
 	for (i = 0; i < size; ++i)
 		m[i] = '0';
