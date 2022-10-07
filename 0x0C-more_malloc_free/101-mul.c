@@ -36,7 +36,7 @@ int _strlen(char *s)
 }
 
 /**
- * errors - prints 'Error' with exit status 98
+ * error - prints 'Error' with exit status 98
  */
 void error(void)
 {
