@@ -38,15 +38,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		return ('\0');
 	}
-	for (i = 0; l1 != 0 && i < l1; ++i)
+	for (i = 0; i < l1; ++i)
 	{
 		s[i] = s1[i];
 	}
-	for (j = 0; l2 != 0 && n < l2 && j < (l1 + n); ++j)
+	for (j = 0; n < l2 && i < (l1 + n); ++j)
 	{
 		s[i++] = s2[j];
 	}
-	for (j = 0; l2 != 0 && n >= l2 && j < (l1 + l2); ++j)
+	for (j = 0; n >= l2 && i < (l1 + l2); ++j)
 	{
 		s[i++] = s2[j];
 	}
