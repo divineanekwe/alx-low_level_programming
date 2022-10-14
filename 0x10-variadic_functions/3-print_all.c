@@ -1,12 +1,12 @@
 #include "variadic_functions.h"
 
 /**
-  * print_all - prints anything
-  * @format: List of types of arguments
-  * passed to the function
-  *
-  * Return: void (nothing)
-  */
+ * print_all - prints anything
+ * @format: list of types of arguments
+ * passed to the function
+ *
+ * Return: void (nothing);
+ */
 void print_all(const char * const format, ...)
 {
 	int i;
@@ -42,9 +42,9 @@ void print_all(const char * const format, ...)
 					i++;
 					continue;
 			}
+			separator = ", ";
+			i++;
 		}
-		separator = ", ";
-		i++;
 	}
 	printf("\n");
 	va_end(arr);
