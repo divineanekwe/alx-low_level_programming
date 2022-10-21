@@ -2,7 +2,7 @@
 
 /**
   * _strlen - finds the length of a string
-  * @s: String to find the length
+  * @str: String to find the length
   *
   * Return: Length of the string @s
   */
@@ -25,6 +25,7 @@ int _strlen(const char *str)
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *node = malloc(sizeof(list_t));
+
 	if (!node)
 		return (NULL);
 	node->str = strdup((char *)str);
