@@ -2,6 +2,7 @@
 
 /**
   * free_listint - frees a listint_t list
+  * @head: Pointer to the list
   *
   * Return: Void (nothing)
   */
