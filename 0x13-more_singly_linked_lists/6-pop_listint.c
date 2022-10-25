@@ -3,6 +3,7 @@
 /**
   * pop_listint - deletes the head node of a
   * listint_t linked list
+  * @head: Pointer to Pointer to the listint_t list
   *
   * Return: The head node's data (n).
   * Otherwise, return 0 if the linked list is empty
