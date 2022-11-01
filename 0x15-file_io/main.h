@@ -25,5 +25,6 @@ void print_magic(unsigned char *e_ident);
 void print_class(unsigned char *e_ident);
 void print_data(unsigned char *e_ident);
 void print_version(unsigned char *e_ident);
+void print_abi(unsigned char *e_ident);
 
 #endif /* MAIN_H */
