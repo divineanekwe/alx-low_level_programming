@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <elf.h>
 
 /* libraries for open */
 #include <sys/types.h>
